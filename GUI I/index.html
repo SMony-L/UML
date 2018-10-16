@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+	File: /~usr/cs/undergrad/2020/slim/public_html/index.html
+ 	91.461 Assignment: Styling your first web page with css
+ 	Lim, Sovanmony, UMass Lowell Computer Science, Sovanmony_Lim@student.uml.edu
+ 	Copyright (c) 2012 by Sovanmony Lim. All rights reserved. May be
+	freely copied or excerpted for educational purposes with credit to the author. updated by SML on October, 2018 at 9:23 AM
+
+-->
+<!-- This is the main page called "index.html". It is just welcome page with navigation bar.
+    The navigation bar has "Home" navigation to main page, "About" navigate to the about the author page, "Assignment" navigate to all the assignments in the class.
+    Users could click on Graphic User Interface I, it will navigate the users to Prof Wenjen Zhou's website. -->
+<html lang= "en">
+    <head>
+        <title> GUI I </title>
+        <link rel="stylesheet" type= "text/css" href="CSS/index.css">
+    </head>
+        <body>
+            <div class = "container">
+                <div id = "top">    
+                    <p>
+                        <a href="http://www.cs.uml.edu/~wzhou/"> Graphic User Interface I </a>
+                    </p>
+                    <ol id = "nav-bar">
+                        <li><a href="index.html"> Home </a></li>
+                        <li><a href="HTML/about.html"> About </a></li>
+                        <li><div class="dropdown">
+                            <button class="dropbtn">Dropdown</button>
+                                <div class="dropdown-content">
+                                    <a href="HW3_zip/HW3_sourceCode/index.html">Assignment 3</a>
+                                    <a href="#">Assignment 4</a>
+                                    <a href="#">Assignment 5</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <div id = "content">
+                    <p> Hello and Welcome </p>    
+                </div>
+                <div>
+                    <p>
+                        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                        <img style="border:0;width:88px;height:31px"
+                        src="http://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="Valid CSS!" />
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </body>
+</html>
