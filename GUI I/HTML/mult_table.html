@@ -1,0 +1,75 @@
+<!--
+	File: /~usr/cs/undergrad/2020/slim/public_html/HTML/mult_table.html
+ 	91.461 Assignment6: Creating Multiplication Table with Javascript 
+ 	Lim, Sovanmony, UMass Lowell Computer Science, Sovanmony_Lim@student.uml.edu
+ 	Copyright (c) 2012 by Sovanmony Lim. All rights reserved. May be
+	freely copied or excerpted for educational purposes with credit to the author. updated by SML on November, 2018 at 1 AM
+
+-->
+<!-- This page is the has the same template as the index.html page. It has navigation bar and contents page 
+    that briefly descripted the author. Moreover, when users click on the author name, it will navigate users to the author Linken profiel. -->
+
+<html lang= "en">
+    <head>
+        <title> GUI I </title>
+        <link rel="stylesheet" type= "text/css" href="../CSS/mult_table.css">
+    </head>
+        <body>
+            <div class = "container">
+                <div id = "top">    
+                    <p>
+                        <a href="http://www.cs.uml.edu/~wzhou/"> Graphic User Interface I </a>
+                    </p>
+                    <ol id = "nav-bar">
+                        <li><a href="../index.html"> Home </a></li>
+                        <li><a href="../HTML/about.html"> About </a></li>
+                        <li><div class="dropdown">
+                            <button class="dropbtn">Dropdown</button>
+                                <div class="dropdown-content">
+                                    <a href="../HW3_zip/HW3_sourceCode/index.html">Assignment 3</a>
+                                    <a href="../index.html">Assignment 4</a>
+                                    <a href="https://smony-l.github.io/UML/GUI%20I/index.html">Assignment 5</a>
+                                    <a href="../HTML/inclass6.html">Inclass 6</a>
+                                    <a href="../HTML/mult_table.html">Assignment 6 </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <div id = "content">
+                    <div id= "mult_title">
+                        <p> This is a Multiplication Table that takes Starting Horizontal Multiplier, Ending Horizontal Multiplier, Starting Vertical Multiplier, Ending Vertical Multiplier. </p><hr>
+                        <p1> The User could input any number between (-10000 ~ 10000) <u>Input must be INTEGER </u></p1>
+                    </div>
+                    
+                    <div class = "input_mult_table">
+                        <form onsubmit='return false'>
+                            <label> Starting Horizontal Multiplier </label>
+                                <input type="number" name="Starting Horizontal Multiplier" id="Start_Horizon" value='1'></br>
+                            <label> Ending Horizontal Multiplier </label>
+                                <input type="number" name="Ending Horizontal Multiplier" id="End_Horizon" value='20'> </br>
+                            <label> Starting Vertical Multiplier </label>
+                                <input type="number" name="Starting Vertial Multiplier" id="Start_Verti" value='1' > </br>
+                            <label> Ending Vertical Multiplier </label>
+                                <input type="number" name="Ending Vertical Multiplier" id="End_Verti" value='20'</br>
+                            <input type="submit" value="Submit" onclick='return table_calculation()'>
+                        </form>
+                    </div>
+                    <div id="mult_title"> 
+                        <p> <u>Multiplication Table </u> </p>
+                        <div id="multiplication_table"></div>
+
+                        <!-- jQuery (necessary for Bootstrap's JavaScript plugins). -->
+                        <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+                        <!-- Latest compiled and minified JavaScript -->
+                        <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+                        <!-- JS file that loads up the JSON data into the HTML document. -->
+                        <script type='text/javascript' src="../JS/mult_table.js"></script>
+                    </div>
+                </div>
+            </div>
+            
+        </body>
+</html>

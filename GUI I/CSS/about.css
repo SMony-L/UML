@@ -1,3 +1,17 @@
+/*
+<!--
+    File: /~usr/cs/undergrad/2020/slim/public_html/CSS/about.css
+    91.461 Assignment4: Creating Your First Web Page with CSS
+    Lim, Sovanmony, UMass Lowell Computer Science, Sovanmony_Lim@student.uml.edu
+    Copyright (c) 2012 by Sovanmony Lim. All rights reserved. May be
+    freely copied or excerpted for educational purposes with credit to the author. updated by SML on November, 2018 at 9:23 AM
+
+-->
+<!-- This page is the has the same template as the index.html page. It has navigation bar and contents page 
+    that briefly descripted the author. Moreover, when users click on the author name, it will navigate users to the author Linken profiel. --> 
+
+*/
+
 body {
     background-color:rgb(224, 224, 224);
     min-width: 700px;
