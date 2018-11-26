@@ -1,10 +1,10 @@
 /*
 <!--
     File: /~usr/cs/undergrad/2020/slim/public_html/CSS/mult_table.css
-    91.461 Assignment6: Creating Multiplication Table with Javascript
+    91.461 Assignment6 & 7: Creating Multiplication Table with Javascript & Using jQuery Validation
     Lim, Sovanmony, UMass Lowell Computer Science, Sovanmony_Lim@student.uml.edu
     Copyright (c) 2012 by Sovanmony Lim. All rights reserved. May be
-    freely copied or excerpted for educational purposes with credit to the author. updated by SML on November, 2018 at 9:23 AM
+    freely copied or excerpted for educational purposes with credit to the author. updated by SML on November, 2018 at 10 AM
 
 -->
 <!-- This page is the has the same template as the index.html page. It has navigation bar and contents page 
@@ -132,7 +132,7 @@ body {
 }
 
 .input_mult_table {
-    font-size: 20pt;
+    font-size: 15pt;
     font-weight: bold;
 }
 
@@ -184,3 +184,4 @@ https://stackoverflow.com/questions/7232813/css-selection-of-first-column-of-fir
 tr:nth-child(even){background-color:yellow}
 tr:nth-child(odd){background-color:#c9d3d6}
 td:first-child, tr:first-child{background-color: grey}
+
