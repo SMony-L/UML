@@ -185,3 +185,13 @@ tr:nth-child(even){background-color:yellow}
 tr:nth-child(odd){background-color:#c9d3d6}
 td:first-child, tr:first-child{background-color: grey}
 
+.error {
+    color: red;
+    text-align: center;
+    font-style: italic;
+}
+input.error {
+    border: 2px solid red;
+    background-color: yellow;
+}
+  
