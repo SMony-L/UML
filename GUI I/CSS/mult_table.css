@@ -1,7 +1,7 @@
 /*
 <!--
     File: /~usr/cs/undergrad/2020/slim/public_html/CSS/mult_table.css
-    91.461 Assignment6 & 7: Creating Multiplication Table with Javascript & Using jQuery Validation
+    91.461 Assignment6 & 7 & 8: Creating Multiplication Table with Javascript & Using jQuery Validation & jQuery Tabs, Sliders
     Lim, Sovanmony, UMass Lowell Computer Science, Sovanmony_Lim@student.uml.edu
     Copyright (c) 2012 by Sovanmony Lim. All rights reserved. May be
     freely copied or excerpted for educational purposes with credit to the author. updated by SML on November, 2018 at 10 AM
@@ -194,6 +194,11 @@ input.error {
     border: 2px solid red;
     background-color: yellow;
 }
-  
 
+/* Assignment 8 from here */
+
+/* Tabs background style */
+#tabs {
+    background: white;
+}
 

@@ -1,0 +1,112 @@
+<!--
+	File: /~usr/cs/undergrad/2020/slim/public_html/HTML/mult_table.html
+ 	91.461 Assignment8: Using jQuery Slider & Tab Widgets
+ 	Lim, Sovanmony, UMass Lowell Computer Science, Sovanmony_Lim@student.uml.edu
+ 	Copyright (c) 2012 by Sovanmony Lim. All rights reserved. May be
+	freely copied or excerpted for educational purposes with credit to the author. updated by SML on December, 2018 at 10 AM
+
+-->
+<!-- This page is the has the same template as the index.html page. It has navigation bar and contents page 
+    that briefly descripted the author. Moreover, when users click on the author name, it will navigate users to the author Linken profiel. -->
+
+<html lang= "en">
+    <head>
+        <title> GUI I </title>
+        <link rel="stylesheet" type= "text/css" href="../CSS/mult_table.css">
+        <!-- jQuery UI theme -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.min.css">
+    </head>
+    <body>
+        <div class = "container">
+            <div id = "top">    
+                <p>
+                    <a href="http://www.cs.uml.edu/~wzhou/"> Graphic User Interface I </a>
+                </p>
+                <ol id = "nav-bar">
+                    <li><a href="../index.html"> Home </a></li>
+                    <li><a href="../HTML/about.html"> About </a></li>
+                    <li><div class="dropdown">
+                        <button class="dropbtn">Dropdown</button>
+                            <div class="dropdown-content">
+                                <a href="../HW3_zip/HW3_sourceCode/index.html">Assignment 3</a>
+                                <a href="../index.html">Assignment 4</a>
+                                <a href="https://smony-l.github.io/UML/GUI%20I/index.html">Assignment 5</a>
+                                <a href="../HTML/inclass6.html">Inclass 6</a>
+                                <a href="../HTML/mult_table.html">Assignment 6 </a>
+                                <a href="../HTML/mult_table_asg7.html">Assignment 7 </a>
+                                <a href="../HTML/asg8.html">Assignment 8 </a>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div id = "content">
+                <div id= "mult_title">
+                    <p> This is a Multiplication Table that takes Starting Horizontal Multiplier, Ending Horizontal Multiplier, Starting Vertical Multiplier, Ending Vertical Multiplier. </p><hr>
+                    <p1> The User could input any number between (-10 ~ 10) <u>Input must be INTEGER </u></p1>    
+                </div>
+                <!-- Prompt User for Input -->
+                <div class = "input_mult_table">
+                    <form id="mult_form" name="mult_form" method="GET">
+                        <div>
+                            <label> Starting Horizontal Multiplier</label>
+                            <input type="number" id="Start_Horizon" name="Start_Horizon" value="0" required>
+                            <div id="slider_start_hor"></div>
+                        </div>
+
+                        <div>
+                            <label> Ending Horizontal Multiplier</label>
+                            <input type="number" id="End_Horizon" name="End_Horizon" value="0" required>
+                            <div id="slider_end_hor"></div>
+                        </div>
+
+                        <div>
+                            <label> Starting Vertical Multiplier  </label>
+                            <input type="number" id="Start_Verti" name="Start_Verti" value="0" required>
+                            <div id="slider_start_vert"></div>
+                        </div>
+
+                        <div>
+                            <label> Ending Vertical Multiplier </label>
+                            <input type="number" id="End_Verti" name="End_Verti" value="0" required>
+                            <div id="slider_end_vert"></div>
+                        </div>
+                            <input id="button_submit" class="submit_button" type="submit" onClick="tab_widget();", value="Save Table">
+                    </form>
+                    <div id="warning_msg"></div>
+                </div>
+                <div id="mult_title"> 
+                    <!-- Multiplication Table will display here -->
+                    <p> <u>Multiplication Table </u> </p>
+                    <div id="multiplication_table"></div>
+                    <div id="tabs"><ul></ul></div>
+                    
+                    <!-- jQuery (necessary for Bootstrap's JavaScript plugins). -->
+                    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+                    <!-- Latest compiled and minified JavaScript -->
+                    <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+                    
+                    <!-- jQuery Validation plugin -->
+                    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+                    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/additional-methods.js"></script>
+
+                    <!-- jQuery UI Slider and Tab Wigets -->
+                    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+                    
+                    <!-- JS file that loads up the JSON data into the HTML document. -->
+                    <script type='text/javascript' src="../JS/asg8.js"></script>
+
+                    <script>
+                    // If ready call all these functions below
+                    $(document).ready(function() {
+                        validation();
+                        slider();
+                        auto_submit(); 
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
