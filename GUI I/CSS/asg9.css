@@ -158,7 +158,6 @@ input[type=submit] {
 #multiplication_table {
     margin-left: auto;
     margin-right: auto;
-    overflow: scroll;
 }
 
 #mult_title p1 {
@@ -203,3 +202,14 @@ input.error {
     background: white;
 }
 
+
+/* Assignment 9 */
+.board {
+    height: 100px;
+    width: 100%;
+}
+#center_text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20pt;
+}

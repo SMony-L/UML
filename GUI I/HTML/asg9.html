@@ -1,0 +1,71 @@
+<!--
+	File: /~usr/cs/undergrad/2020/slim/public_html/HTML/asg9.html
+ 	91.461 Assignment9: Scrabble Game
+ 	Lim, Sovanmony, UMass Lowell Computer Science, Sovanmony_Lim@student.uml.edu
+ 	Copyright (c) 2012 by Sovanmony Lim. All rights reserved. May be
+	freely copied or excerpted for educational purposes with credit to the author. updated by SML on December 13, 2018 at 11 AM
+
+-->
+<!-- This page is the has the same template as the index.html page. It has navigation bar and contents page 
+    that briefly descripted the author. Moreover, when users click on the author name, it will navigate users to the author Linken profiel. -->
+
+<html lang= "en">
+    <head>
+        <title> GUI I </title>
+        <link rel="stylesheet" type= "text/css" href="../CSS/asg9.css">
+        <!-- jQuery UI theme -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.min.css">
+    </head>
+    <body>
+        <div class = "container">
+            <div id = "top">    
+                <p>
+                    <a href="http://www.cs.uml.edu/~wzhou/"> Graphic User Interface I </a>
+                </p>
+                <ol id = "nav-bar">
+                    <li><a href="../index.html"> Home </a></li>
+                    <li><a href="../HTML/about.html"> About </a></li>
+                    <li><div class="dropdown">
+                        <button class="dropbtn">Dropdown</button>
+                            <div class="dropdown-content">
+                                <a href="../HW3_zip/HW3_sourceCode/index.html">Assignment 3</a>
+                                <a href="../index.html">Assignment 4</a>
+                                <a href="https://smony-l.github.io/UML/GUI%20I/index.html">Assignment 5</a>
+                                <a href="../HTML/inclass6.html">Inclass 6</a>
+                                <a href="../HTML/mult_table.html">Assignment 6 </a>
+                                <a href="../HTML/mult_table_asg7.html">Assignment 7 </a>
+                                <a href="../HTML/asg8.html">Assignment 8 </a>
+                                <a href="../HTML/asg9.html">Assignment 9 </a>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div id = "content">
+                <!-- Title -->
+                <div id= "title">
+                    <p> Scrabble Game </p><hr>
+                </div>
+                <!-- Board Image -->
+                <div id= "board_img">
+                    <img class="board" id="the_board" src="../IMG/Scrabble/board.png">
+                </div>
+                <!-- Play the Game -->
+                <div id= "game_board">
+                    <!-- Game score and word -->
+                    <div id= "center_text">
+                        <div> Score: <span id="score"> 0 </span> </div>
+                        <div> Word: <span id="word"> ________ </span> </div>
+                    </div>
+                    <!-- Submit button and Reset Button -->
+                    <div id= "the_buttons">
+                        <div id= "center_text">
+                            <button onclick="#">Submit Word</button>
+                            <button onclick="#">Reset Tiles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
