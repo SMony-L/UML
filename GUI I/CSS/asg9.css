@@ -205,7 +205,7 @@ input.error {
 
 /* Assignment 9 */
 .board_size {
-    height: 12%;
+    height: 120px;
     width: 100%;
 }
 #center_text {
