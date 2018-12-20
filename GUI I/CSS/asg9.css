@@ -206,9 +206,8 @@ input.error {
 
 /* Assignment 9 */
 .board_size {
-    height: 15%;
+    height: 12%;
     width: 100%;
-    object-fit: contain;
 }
 #center_text {
     text-align: center;
@@ -220,7 +219,7 @@ input.error {
     width: 100%;
 }
 .pieces {
-    height: 10%;
+    height: 12%;
     width: 6%;
     padding-left: 5%;
 }
