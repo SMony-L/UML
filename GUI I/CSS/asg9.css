@@ -33,7 +33,7 @@ body {
 }
 .pieces {
     height: 14%;
-    width: 12%;
+    width: 140px;
     padding-left: 5%;
 }
 .droppable {
