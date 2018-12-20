@@ -228,8 +228,8 @@ function load_scrabble_pieces() {
     piece_ID = "#piece" + i;
     game_tiles[i].letter = pieces[random_num].letter;
       
-    var img_left = -80;
-    var img_top = -130;
+    var img_left = 0;
+    var img_top = -120;
   
       
     $("#rack").append(piece);
@@ -254,8 +254,8 @@ function load_droppable_targets() {
 
         // var pos = $("#the_board").position();
 
-        var img_left = 5 + (15 * i);
-        var img_top = -125;
+        var img_left = 15 + (18 * i);
+        var img_top = -85;
 
         $("#board").append(drop);
 
