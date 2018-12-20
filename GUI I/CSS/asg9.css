@@ -1,10 +1,10 @@
 /*
 <!--
-    File: /~usr/cs/undergrad/2020/slim/public_html/CSS/mult_table.css
-    91.461 Assignment6 & 7 & 8: Creating Multiplication Table with Javascript & Using jQuery Validation & jQuery Tabs, Sliders
+    File: /~usr/cs/undergrad/2020/slim/public_html/CSS/asg9.css
+    91.461 Assignment9: Scrabble Game
     Lim, Sovanmony, UMass Lowell Computer Science, Sovanmony_Lim@student.uml.edu
     Copyright (c) 2012 by Sovanmony Lim. All rights reserved. May be
-    freely copied or excerpted for educational purposes with credit to the author. updated by SML on November, 2018 at 10 AM
+    freely copied or excerpted for educational purposes with credit to the author. updated by SML on December, 2018 at 10 AM
 
 -->
 <!-- This page is the has the same template as the index.html page. It has navigation bar and contents page 
@@ -204,7 +204,7 @@ input.error {
 
 
 /* Assignment 9 */
-.board {
+.board_size {
     height: 100px;
     width: 100%;
 }
@@ -212,4 +212,13 @@ input.error {
     text-align: center;
     font-weight: bold;
     font-size: 20pt;
+}
+.resize_rack {
+    height: 125px;
+    width: 100%;
+}
+.pieces {
+    height: 100px;
+    width: 80px;
+    padding: 30px;
 }

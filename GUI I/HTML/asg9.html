@@ -48,7 +48,8 @@
                 </div>
                 <!-- Board Image -->
                 <div id= "board_img">
-                    <img class="board" id="the_board" src="../IMG/Scrabble/board.png">
+                    <img class="board_size" id="the_board" src="../IMG/Scrabble/board.png">
+                    <div id="board"> </div>
                 </div>
                 <!-- Play the Game -->
                 <div id= "game_board">
@@ -62,9 +63,40 @@
                         <div id= "center_text">
                             <button onclick="#">Submit Word</button>
                             <button onclick="#">Reset Tiles</button>
+                            <button onclick="#">Pick a new tile </button>
                         </div>
                     </div>
+                    <br> <br> <br>
+                    <div id= "center_text">
+                        <img class="resize_rack" id="the_rack" src="../IMG/Scrabble/Scrabble_Rack_flat.png">
+                        <div id="rack"></div>
+                    </div>
                 </div>
+                
+                
+                <!-- jQuery (necessary for Bootstrap's JavaScript plugins). -->
+                <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+                <!-- Latest compiled and minified JavaScript -->
+                <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+                
+                <!-- jQuery Validation plugin -->
+                <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+                <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/additional-methods.js"></script>
+
+                <!-- jQuery UI Slider and Tab Wigets -->
+                <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+                
+                <!-- JS file that loads up the JSON data into the HTML document. -->
+                <script type='text/javascript' src="../JS/asg9.js"></script>
+
+                <script>
+                // If ready call all these functions below
+                $(document).ready(function() {
+                    load_scrabble_pieces();
+                    load_droppable_targets();
+                });
+                </script>
             </div>
         </div>
     </body>
