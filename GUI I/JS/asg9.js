@@ -13,7 +13,7 @@
     <!-- Most part of the code I copied it from the previous assignment 8 -->
 */
 
-// by Ramon Meza
+// got from Piazza by Ramon Meza
 var pieces = [
     {"letter":"A", "value":1,  "amount":9},
     {"letter":"B", "value":3,  "amount":2},
@@ -228,7 +228,7 @@ function load_scrabble_pieces() {
     piece_ID = "#piece" + i;
     game_tiles[i].letter = pieces[random_num].letter;
       
-    var img_left = 10 * i;
+    var img_left = 0;
     var img_top = -150;
   
       
@@ -254,8 +254,8 @@ function load_droppable_targets() {
 
         // var pos = $("#the_board").position();
 
-        var img_left = 0;
-        var img_top = -120;
+        var img_left = 10 * i;
+        var img_top = -125;
 
         $("#board").append(drop);
 
