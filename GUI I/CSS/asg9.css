@@ -208,7 +208,7 @@ input.error {
 .board_size {
     height: 15%;
     width: 100%;
-    object-fit:fill;
+    object-fit: contain;
 }
 #center_text {
     text-align: center;
@@ -220,7 +220,7 @@ input.error {
     width: 100%;
 }
 .pieces {
-    height: 12%;
+    height: 10%;
     width: 6%;
     padding-left: 5%;
 }
