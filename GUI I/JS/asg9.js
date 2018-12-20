@@ -254,7 +254,7 @@ function load_droppable_targets() {
 
         // var pos = $("#the_board").position();
 
-        var img_left =  (10 * i);
+        var img_left = 10;
         var img_top = -125;
 
         $("#board").append(drop);
