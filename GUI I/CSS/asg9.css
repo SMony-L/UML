@@ -205,7 +205,7 @@ input.error {
 
 /* Assignment 9 */
 .board_size {
-    height: 100px;
+    height: 10%;
     width: 100%;
 }
 #center_text {
@@ -214,11 +214,11 @@ input.error {
     font-size: 20pt;
 }
 .resize_rack {
-    height: 125px;
+    height: 10%;
     width: 100%;
 }
 .pieces {
-    height: 100px;
-    width: 80px;
+    height: 10%;
+    width: 6%;
     padding: 30px;
 }
