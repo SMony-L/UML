@@ -24,7 +24,7 @@ body {
 
 .board_size {
     height: 125px;
-    width: 1405px;
+    width: 1400px;
 }
 
 .resize_rack {
@@ -32,9 +32,10 @@ body {
     width: 100%;
 }
 .pieces {
-    height: 14%;
+    height: 120px;
     width: 140px;
     padding-left: 5%;
+    padding-bottom: 2%;
 }
 .droppable {
     height: 15%;
