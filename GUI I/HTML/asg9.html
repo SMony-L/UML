@@ -15,90 +15,71 @@
         <link rel="stylesheet" type= "text/css" href="../CSS/asg9.css">
         <!-- jQuery UI theme -->
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.min.css">
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class = "container">
-            <div id = "top">    
-                <p>
-                    <a href="http://www.cs.uml.edu/~wzhou/"> Graphic User Interface I </a>
-                </p>
-                <ol id = "nav-bar">
-                    <li><a href="../index.html"> Home </a></li>
-                    <li><a href="../HTML/about.html"> About </a></li>
-                    <li><div class="dropdown">
-                        <button class="dropbtn">Dropdown</button>
-                            <div class="dropdown-content">
-                                <a href="../HW3_zip/HW3_sourceCode/index.html">Assignment 3</a>
-                                <a href="../index.html">Assignment 4</a>
-                                <a href="https://smony-l.github.io/UML/GUI%20I/index.html">Assignment 5</a>
-                                <a href="../HTML/inclass6.html">Inclass 6</a>
-                                <a href="../HTML/mult_table.html">Assignment 6 </a>
-                                <a href="../HTML/mult_table_asg7.html">Assignment 7 </a>
-                                <a href="../HTML/asg8.html">Assignment 8 </a>
-                                <a href="../HTML/asg9.html">Assignment 9 </a>
-                            </div>
-                        </div>
-                    </li>
-                </ol>
+        <!-- Title -->
+        <div id= "center_text">
+            <p> Scrabble Game </p><hr>
+        </div>
+        <!-- Board Image -->
+        <div id= "board_img">
+            <img class="board_size" id="the_board" src="../IMG/Scrabble/board.png">
+            <div id="board"> </div>
+        </div>
+        <!-- Play the Game -->
+        <div id= "game_board">
+            <!-- Game score and word -->
+            <div id= "center_text">
+                <div> Score: <span id="score"> 0 </span> </div>
+                <div> Word: <span id="word"> ________ </span> </div>
             </div>
-            <div id = "content">
-                <!-- Title -->
-                <div id= "title">
-                    <p> Scrabble Game </p><hr>
+            <!-- Submit button and Reset Button -->
+            <div id= "the_buttons">
+                <div id= "center_text">
+                    <button onclick="#">Submit Word</button>
+                    <button onclick="#">Reset Tiles</button>
+                    <button onclick="#">Pick a new tile </button>
                 </div>
-                <!-- Board Image -->
-                <div id= "board_img">
-                    <img class="board_size" id="the_board" src="../IMG/Scrabble/board.png">
-                    <div id="board"> </div>
-                </div>
-                <!-- Play the Game -->
-                <div id= "game_board">
-                    <!-- Game score and word -->
-                    <div id= "center_text">
-                        <div> Score: <span id="score"> 0 </span> </div>
-                        <div> Word: <span id="word"> ________ </span> </div>
-                    </div>
-                    <!-- Submit button and Reset Button -->
-                    <div id= "the_buttons">
-                        <div id= "center_text">
-                            <button onclick="#">Submit Word</button>
-                            <button onclick="#">Reset Tiles</button>
-                            <button onclick="#">Pick a new tile </button>
-                        </div>
-                    </div>
-                    <br> <br> <br>
-                    <div id= "center_text">
-                        <img class="resize_rack" id="the_rack" src="../IMG/Scrabble/Scrabble_Rack_flat.png">
-                        <div id="rack"></div>
-                    </div>
-                </div>
-                
-                
-                <!-- jQuery (necessary for Bootstrap's JavaScript plugins). -->
-                <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-                <!-- Latest compiled and minified JavaScript -->
-                <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-                
-                <!-- jQuery Validation plugin -->
-                <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
-                <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/additional-methods.js"></script>
-
-                <!-- jQuery UI Slider and Tab Wigets -->
-                <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-                
-                <!-- JS file that loads up the JSON data into the HTML document. -->
-                <script type='text/javascript' src="../JS/asg9.js"></script>
-
-                <script>
-                // If ready call all these functions below
-                $(document).ready(function() {
-                    load_scrabble_pieces();
-                    load_droppable_targets();
-                });
-                </script>
+            </div>
+            <br> <br> <br>
+            <div id= "center_text">
+                <img class="resize_rack" id="the_rack" src="../IMG/Scrabble/Scrabble_Rack_flat.png">
+                <div id="rack"></div>
             </div>
         </div>
+        
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins). -->
+        <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        
+        <!-- jQuery Validation plugin -->
+        <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+        <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/additional-methods.js"></script>
+
+        <!-- jQuery UI Slider and Tab Wigets -->
+        <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
+        <!-- JS file that loads up the JSON data into the HTML document. -->
+        <script type='text/javascript' src="../JS/asg9.js"></script>
+
+        <script>
+        // If ready call all these functions below
+        $(document).ready(function() {
+            load_scrabble_pieces();
+            load_droppable_targets();
+        });
+        </script>
+    
     </body>
 </html>
