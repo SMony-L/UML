@@ -1,0 +1,128 @@
+\documentclass[letterpaper, 11pt, conference]{ieeeconf}  
+
+\overrideIEEEmargins
+
+\usepackage{graphics}
+\usepackage{amsmath}
+
+\title{\LARGE \bf Machine Learning Final Project 2018}
+\author{Taha Azzaoui, Daniel Santos, Huma Sheikh, Sony...}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+\section{Large Dataset: Labaled Faces in the Wild}
+
+\subsection{The dataset}
+
+For our large dataset, we chose to use the Labeled Faces in The Wild. We
+formulated our problem as a facial recognition problem. That is, given an
+existing database of images (our training set), we wish to report the name of
+the person in a given input image. Note that it is important to stress the
+difference between the problem of face recognition and the problem of face
+detection. The former assumes that the input image necessarily contains a face
+and tries to detect, from a group of known faces, which face it is, while the
+latter does not make this assumption, and instead tries to detect weather
+there exists a face in the input image at all. For the purpose of this project,
+we concern ourselves only with the problem of face recognition.
+
+
+\subsection{Our Initial approach}
+
+We started by first finding some vector representation of the images in the data set. To do so, we preformed a
+linear transformation, $f: \mathbb{R}^{m x n} \rightarrow \mathbb{R}^{mn}$ where $f$ essentially "flattens"
+out an image into a single row vector of pixels by concatenating the rows together. Now that we have a vector
+representation of our images, we needed a way to express similarity between two images. For this, we used the
+cosine distance between two vectors. That is, let $u$ and $v$ be the vector representations of two images in our data set.
+The measure of similarity between them can be expressed as:
+$$\text{Similarity} = cos(\theta) = \frac{\vec{u} \cdot \vec{v}}{||\vec{v}|| ||\vec{u}||}$$
+which follows from the definition of the inner product. Therefore, our initial
+strategy was a follows: given an input image, transform it into a vector, then
+compute its cosine similarity pair-wise between every other image in the database.
+This strategy was okay for small data sets, but presented big problems as the
+training set grew. The first problem is the obvious one- performance at scale. The performance
+of this approach depends on both the size of the data set as well as the size of
+the images within it. We tried to deal the latter by simply re-sizing the
+images, however as the LFW data set contains 13,000 labelled images from 5749
+people, it was not possible to decrease the size of the data set without also
+decreasing our accuracy. The second problem is more subtle and has to do with
+the noise in the images. We found that many of the pixels in the image were
+actually not contributing much information towards recognizing a face. These
+were usually pixels around the face representing the background but not telling
+us anything about who was in the image. This really impacted the accuracy of our
+approach because the measure of cosine similarity was taking into consideration
+the background of the image where two images were somewhat similar if they had a
+similar background even though they had different faces! Clearly we needed a new
+approach.
+
+\subsection{The Revised Approach}
+
+After our first approach failed, we did some more research and came across the
+eigenfaces method. The main idea here is that instead of using all of the pixels
+in each image, we can use the dimensionality reduction technique, PCA, to map
+our vectors from $\mathbb{R}^{mn}$ to $\mathbb{R}^{k}$ where $k < mn$. In our
+implementation, we found that $k = 125$ struck the perfect balance between accuracy
+and performance. One pitfall that we had here was that initially we fit the PCA model on the
+entire data set. This of course was a mistake since it resulted in over fitting,
+as our algorithm was essentially memorizing the data. To fix this issue, we went back
+and applied PCA to the training set only, leaving the test set untouched.
+Dimensionality reduction here solved much of the problems we saw in our initial
+approach. First, reducing the number of features significantly boosted
+performance since we no longer have to waste time doing computations that don't
+give us any information. However, more importantly, in reducing the number of
+features, we also reduced the complexity of our model, as we learned when
+we covered the bias-variance trade-off in class.
+
+\subsection{Training and Validation}
+After running PCA, it was time to train our model. We chose to use Support
+Vector Machines, as they have been proven to be effective at such tasks. We
+used scikitlearn's "GridSearchCV" function to select our hyper parameters, which
+resulted in a regularization term of $C = 1000$ and $\gamma = 0.001$. In
+particular to interpret this value of $C$, we note that higher values of $C$
+imply a more complicated decision boundary, which suggests that our decision
+boundary was highly non-linear.To validate our model, we used our previously 
+trained PCA model to transform the test set to our current feature space. 
+Then we used the SVM model to classify the faces in the test set. 
+Our resulting confusion matrix can be found In table I.
+
+\begin{table}[h]
+\caption{Confusion Matrix for the Labled Faces}
+\begin{tabular}{lllll}
+                   & precision & recall & f1-score & support \\
+Gerhard\_Schroeder & 0.91      & 0.75   & 0.82     & 28      \\
+Donald\_Rumsfeld   & 0.84      & 0.82   & 0.83     & 33      \\
+Tony\_Blair        & 0.65      & 0.82   & 0.73     & 34      \\
+avg / total        & 0.86      & 0.84   & 0.85     & 282    
+\end{tabular}
+\end{table}
+
+\subsection{Analysis}
+
+As you can see our accuracy results were about 85\%. While this does not seem
+too great compared to what we achieved with the other data sets, it's important to
+note both the simplicity of the model as well as the amount of training data.
+One reason for this result is simply that we may need more training data.
+Initial tests suggest that adding more examples to the training set would
+increase the accuracy to about 90\%. While this model is quite effective, we did
+notice that it was fairly sensitive to changes in intensity. Since the images
+were black and white, there were some input images which were so overshadowed
+that we could hardly even make out the faces ourselves. Secondly, the model is
+also sensitive to the angle of the face in the image. That is, we noticed many
+of the errors were because the input image was pointed one way but the actual
+images in the training set were pointed in another. Therefore, we think that
+controlling for the brightness of the images as well as the angle of the face
+in the image would also help increase the success of our model.
+
+
+
+%begin{thebibliography}{99}
+%end{thebibliography}
+
+
+
+
+\end{document}
